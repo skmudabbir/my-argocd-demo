@@ -58,11 +58,14 @@ spec:
           {{- end }}
           {{- with .Values.volumeMounts }}
           volumeMounts:
-            {{- toYaml . | nindent 12 }}
+            - name: app-code
+              mountPath: /usr/src/app
           {{- end }}
       {{- with .Values.volumes }}
       volumes:
-        {{- toYaml . | nindent 8 }}
+        - name: app-code
+          hostPath:
+            path: /c/my-argocd-demo/app 
       {{- end }}
       {{- with .Values.nodeSelector }}
       nodeSelector:
