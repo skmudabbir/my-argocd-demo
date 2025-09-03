@@ -1,0 +1,9 @@
+apiVersion: apps/v1
+kind: Deployment
+  volumeMounts:
+        - name: app-code
+          mountPath: /usr/src/app
+      volumes:
+      - name: app-code
+        hostPath:
+          path: /c/my-argocd-demo/app  # Replace with full path

@@ -1,0 +1,8 @@
+image:
+  repository: node
+  pullPolicy: IfNotPresent
+  tag: "18"
+
+service:
+  type: NodePort
+  port: 3000
